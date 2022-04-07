@@ -40,12 +40,14 @@ footer p {
 body{
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url(../img/bg.jpg);
 }
 
 .playing_card{
   width: 200px;
   margin: 20px;
   height: auto;
+  border-radius: 7px;
 }
 
 .checkbox{
