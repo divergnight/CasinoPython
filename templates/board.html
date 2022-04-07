@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta lang="fr">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyCasino</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/board.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </head>
+
+  <body>
+    <main role="main">
+      {% if 'bet' not in session %}
+        {% for card in range(5) %}
+          <img class="playing_card" src="{{ url_for('static', filename='img/cards/back.jpg') }}" />
+        {% endfor %}
+        <form action="/board" method="POST">
+          <div class="form-group">
+            <label for="bet">Bet</label>
+            <input type="number" name="bet" id="bet" class="form-control"placeholder="Bet" min=1 max='{{ session["wallet"] }}' autofocus required>
+           </div>
+           <button type="submit" class="btn btn-primary">Submit</button>
+        </form> 
+      {% endif %}
+      {% if 'bet' in request.form %}
+      <form action="/board" method="POST">
+        <div class="form-group">
+          <input type='hidden' name='change_card' value='None' />
+          {% for card in session['card'] %}
+            <input type="checkbox" id="{{card}}" name="c{{loop.index}}" class="checkbox"/>
+            <label for="{{card}}">
+              <img 
+                class="playing_card"
+                src="{{ url_for('static', filename='img/cards/'+card+'.jpg') }}"
+                data-card="{{card}}"
+                onclick="clickOnCardForReverse(this)" 
+              />
+            </label>
+          {% endfor %}
+         </div>
+         <button type="submit" class="btn btn-primary">Submit</button>
+          </form> 
+      {% endif %}
+      {% if 'change_card' in request.form %}
+          {% for card in session['card'] %}
+            <img class="playing_card" src="{{ url_for('static', filename='img/cards/'+card+'.jpg') }}" />
+          {% endfor %}
+          <p>You have a {{ session['score_name'] }}</p>
+          <form action="/board" method="POST">
+             <button type="submit" name="replay" class="btn btn-primary" autofocus>Continue</button>
+          </form>
+          <form action="/board" method="POST">
+             <button type="submit" name="quit" class="btn btn-primary">Quit</button>
+          </form> 
+      {% endif %}
+    </main>
+  
+  </body>
+</html>
