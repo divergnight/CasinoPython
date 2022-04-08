@@ -29,9 +29,9 @@
         <form action="/board" method="POST">
           <div class="form-group">
             <label for="bet">Bet</label>
-            <input type="number" name="bet" id="bet" class="form-control"placeholder="Bet" min=1 max='{{ session["wallet"] }}' autofocus required>
+            <input type="number" name="bet" id="bet" class="form-control bottom-left"placeholder="Input your bet" min=1 max='{{ session["wallet"] }}' autofocus required>
            </div>
-           <button type="submit" class="btn btn-primary">Submit</button>
+           <button type="submit" class="btn btn-primary bottom-right">Submit</button>
         </form> 
       {% endif %}
       {% if 'bet' in request.form %}
@@ -52,7 +52,7 @@
             {% endfor %}
           </div>
          </div>
-         <button type="submit" class="btn btn-primary">Submit</button>
+         <button type="submit" class="btn btn-primary bottom-right">Submit</button>
           </form> 
       {% endif %}
       {% if 'change_card' in request.form %}
@@ -63,10 +63,10 @@
           </div>
           <div class="earn"><p>You have a {{ session['score_name'] }}</p></div>
           <form action="/board" method="POST">
-             <button type="submit" name="replay" class="btn btn-primary" autofocus>Continue</button>
+             <button type="submit" name="replay" class="btn btn-primary bottom-left" autofocus>Continue</button>
           </form>
           <form action="/board" method="POST">
-             <button type="submit" name="quit" class="btn btn-primary">Quit</button>
+             <button type="submit" name="quit" class="btn btn-primary bottom-right">Quit</button>
           </form> 
       {% endif %}
     </main>

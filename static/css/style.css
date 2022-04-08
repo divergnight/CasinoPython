@@ -1,5 +1,12 @@
 :root {
   --jumbotron-padding-y: 3rem;
+  --main-color: rgb(216,231,133);
+}
+
+
+@font-face {
+  font-family: URW-Cancery-L;
+  src: url("../font/urw_chancery_l.ttf");
 }
 
 .jumbotron {
@@ -44,6 +51,7 @@ body{
   background-attachment: fixed;
   background-image: url(../img/bg.jpg);
   background-color: orange;
+  font-family: "URW-Cancery-L";
 }
 
 .playing_card{
@@ -58,7 +66,7 @@ body{
 }
 
 .form-control{
-  color: rgb(217, 255, 0);
+  color: var(--main-color);
 }
 
 .btn-primary, .form-control{
@@ -67,14 +75,21 @@ body{
   background-image: url(../img/butonbg.jpg);
   background-color: #4E3B31;
   border-color: #4E3B31;
-  color: rgb(217, 255, 0) !important;
+  color: var(--main-color) !important;
   font-weight: 750;
+  font-size: 20px;
 }
 
-.btn-primary{
+.bottom-right{
   position: fixed;
   bottom: 5rem;
   right: 5rem;
+}
+
+.bottom-left{
+  position: fixed;
+  bottom: 5rem;
+  left: 5rem;
 }
 
 .btn-primary:focus, .btn-primary:hover, .form-control:focus, .form-control:hover{
@@ -109,6 +124,6 @@ input[type=number] {
 }
 
 ::placeholder{
-  color: rgb(217, 255, 0) !important;
+  color: var(--main-color) !important;
   font-weight: 750;
 }
