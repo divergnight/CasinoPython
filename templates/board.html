@@ -29,7 +29,7 @@
         <form action="/board" method="POST">
           <div class="form-group">
             <label for="bet">Bet</label>
-            <input type="number" name="bet" id="bet" class="form-control bottom-left"placeholder="Input your bet" min=1 max='{{ session["wallet"] }}' autofocus required>
+            <input type="number" name="bet" id="bet" class="form-control"placeholder="Enter your bet" min=1 max='{{ session["wallet"] }}' autofocus required>
            </div>
            <button type="submit" class="btn btn-primary bottom-right">Submit</button>
         </form> 

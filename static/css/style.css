@@ -67,17 +67,39 @@ body{
 
 .form-control{
   color: var(--main-color);
+  background: none;
+  border: none;
+  border-bottom: 2px black solid !important;
+}
+
+.form-group{
+  padding-top: 3rem;
+  text-align: center;
+}
+
+label{
+  font-size: 35px;
+}
+
+input{
+  text-align: center;
+  margin: 0 auto;
+  width: 250px !important;
+  font-size: 24px !important;
 }
 
 .btn-primary, .form-control{
   width: 150px;
   height: 50px;
-  background-image: url(../img/butonbg.jpg);
-  background-color: #4E3B31;
-  border-color: #4E3B31;
   color: var(--main-color) !important;
   font-weight: 750;
   font-size: 20px;
+}
+
+.btn-primary{
+  background-image: url(../img/butonbg.jpg);
+  background-color: #4E3B31;
+  border-color: #4E3B31;
 }
 
 .bottom-right{
@@ -92,11 +114,16 @@ body{
   left: 5rem;
 }
 
-.btn-primary:focus, .btn-primary:hover, .form-control:focus, .form-control:hover{
+.btn-primary:focus, .btn-primary:hover{
   border-color: #4E3B31;
   background-color: #4E3B31;
   box-shadow: 0 0 0 0.25rem rgb(78, 59, 49, 0.25);
 }
+
+ .form-control:focus, .form-control:hover{
+  background: none;
+  box-shadow: none;
+ }
 
 .cards{
   text-align: center;
