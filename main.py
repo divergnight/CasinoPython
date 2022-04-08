@@ -72,6 +72,10 @@ def game():
     if 'quit' in request.form:
         session.pop('bet',None)
         session.pop('card',None)
+        if session['wallet'] <= 0:
+            session.clear()
+            return redirect(url_for('index'))
+
         return redirect(url_for('quit'))
 
     return render_template('board.html')

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html><head>
     <meta charset="utf-8">
     <meta lang="fr">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='./img/favicon192.png')}}">
     <title>PyCasino</title>
 
     <!-- Bootstrap core CSS -->
@@ -15,6 +16,7 @@
 
   <body>
     <main role="main">
+      <h1><img class="icon" src="{{ url_for('static', filename='img/favicon.png') }}"/>PyCasino</h1>
 
 
         <div class="container">
@@ -25,7 +27,7 @@
                </div>
                <div class="form-group">
                 <label for="wallet">Wallet</label>
-                <input type="number" name="wallet" id="wallet" class="form-control" placeholder="Enter your wallet" min=0 max=1000000 required>
+                <input type="number" name="wallet" id="wallet" class="form-control" placeholder="Enter your wallet" min=1 max=1000000 required>
                </div>
                <button type="submit" class="btn btn-primary bottom-right">Enter in game</button>
 

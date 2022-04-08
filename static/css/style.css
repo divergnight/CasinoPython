@@ -187,8 +187,7 @@ table{
   top: 4rem;
   font-size: 22px;
   border-collapse: separate;
-  border-spacing: 1rem 0;
-  border-bottom: 2px black solid;
+  border-spacing: 2rem 0;
   border-radius: 5px;
 }
 
@@ -203,6 +202,16 @@ th{
   height: 10px;
 }
 
+.border-bottom{
+  border-bottom: 2px black solid !important;
+  border-radius: 5px;
+  height: 10px;
+}
+
 td:last-child{
   text-align: right;
+}
+
+.icon{
+  width: 96px;
 }

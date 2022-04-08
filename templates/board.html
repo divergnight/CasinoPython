@@ -67,6 +67,9 @@
                 <td>Pair</td>
                 <td>1</td>
               </tr>
+              <tr>
+                <td class="border-bottom" colspan="2"></td>
+              </tr>
             </tbody>
           </table>
         {% endif %}  
@@ -118,6 +121,9 @@
                 <td>Pair</td>
                 <td>{{session['bet']*1}}</td>
               </tr>
+              <tr>
+                <td class="border-bottom" colspan="2"></td>
+              </tr>
             </tbody>
         </table>
       {% endif %}
@@ -164,9 +170,11 @@
             {% endfor %}
           </div>
           <div class="earn"><p>You have a {{ session['score_name'] }}</p></div>
-          <form action="/board" method="POST">
-             <button type="submit" name="replay" class="btn btn-primary bottom-left" autofocus>Continue</button>
-          </form>
+          {% if session['wallet'] > 0 %}
+            <form action="/board" method="POST">
+               <button type="submit" name="replay" class="btn btn-primary bottom-left" autofocus>Continue</button>
+            </form>
+          {% endif %}
           <form action="/board" method="POST">
              <button type="submit" name="quit" class="btn btn-primary bottom-right">Quit</button>
           </form> 
