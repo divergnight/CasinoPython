@@ -19,7 +19,7 @@
     <main role="main">
       <div class="wallet">
         <h4>Wallet : {{ session['wallet'] }}</h4>
-        
+      </div>
         {% if 'bet' not in session %}
           <table>
             <thead>
@@ -29,19 +29,22 @@
             </thead>
             <tbody>
               <tr>
-                <td>Quinte Flush Royal</td>
+                <td class="ttop" colspan="2"></td>
+              </tr>
+              <tr>
+                <td>Royal Flush</td>
                 <td>250</td>
               </tr>
               <tr>
-                <td>Quinte Flush</td>
+                <td>Straight Flush</td>
                 <td>50</td>
               </tr>
               <tr>
-                <td>Carre</td>
+                <td>Four of the kind</td>
                 <td>25</td>
               </tr>
               <tr>
-                <td>Full</td>
+                <td>Full House</td>
                 <td>9</td>
               </tr>
               <tr>
@@ -49,19 +52,19 @@
                 <td>6</td>
               </tr>
               <tr>
-                <td>Quinte</td>
+                <td>Straight</td>
                 <td>4</td>
               </tr>
               <tr>
-                <td>Brelan</td>
+                <td>Three of the kind</td>
                 <td>3</td>
               </tr>
               <tr>
-                <td>Double Paire</td>
+                <td>Two Pair</td>
                 <td>2</td>
               </tr>
               <tr>
-                <td>Paire</td>
+                <td>Pair</td>
                 <td>1</td>
               </tr>
             </tbody>
@@ -80,15 +83,15 @@
                 <td class="ttop" colspan="2"></td>
               </tr>
               <tr>
-                <td>Quinte Flush Royal</td>
+                <td>Royal Flush</td>
                 <td>{{session['bet']*250}}</td>
               </tr>
               <tr>
-                <td>Quinte Flush</td>
+                <td>Straight Flush</td>
                 <td>{{session['bet']*50}}</td>
               </tr>
               <tr>
-                <td>Carre</td>
+                <td>Four of the kind</td>
                 <td>{{session['bet']*25}}</td>
               </tr>
               <tr>
@@ -100,19 +103,19 @@
                   <td>{{session['bet']*6}}</td>
               </tr>
               <tr>
-                <td>Quinte</td>
+                <td>Straight</td>
                 <td>{{session['bet']*4}}</td>
               </tr>
               <tr>
-                <td>Brelan</td>
+                <td>Tree of the kind</td>
                 <td>{{session['bet']*3}}</td>
               </tr>
               <tr>
-                <td>Double Paire</td>
+                <td>Two Pair</td>
                 <td>{{session['bet']*2}}</td>
               </tr>
               <tr>
-                <td>Paire</td>
+                <td>Pair</td>
                 <td>{{session['bet']*1}}</td>
               </tr>
             </tbody>
@@ -126,11 +129,11 @@
           {% endfor %}
         </div>
         <form action="/board" method="POST">
-          <div class="form-group">
+          <div class="form-group bet-sect">
             <label for="bet">Bet</label>
             <input type="number" name="bet" id="bet" class="form-control"placeholder="Enter your bet" min=1 max='{{ session["wallet"] }}' autofocus required>
            </div>
-           <button type="submit" class="btn btn-primary bottom-right">Submit</button>
+           <button type="submit" class="btn btn-primary bottom-right">Draw card</button>
         </form> 
       {% endif %}
       {% if 'bet' in request.form %}
@@ -151,7 +154,7 @@
             {% endfor %}
           </div>
          </div>
-         <button type="submit" class="btn btn-primary bottom-right">Submit</button>
+         <button type="submit" class="btn btn-primary bottom-right">Change card</button>
           </form> 
       {% endif %}
       {% if 'change_card' in request.form %}

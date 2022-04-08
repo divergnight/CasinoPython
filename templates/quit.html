@@ -16,10 +16,12 @@
 
   <body>
     <main role="main">
-      <p>Your wallet : {{ session['wallet'] }}<p>
+      <div class="wallet">
+        <h4>Wallet : {{ session['wallet'] }}</h4>
+      </div>
 
       <form action="/quit" method='POST'>
-        <button type="submit" name="cashout" class="btn btn-primary bottom-right">Cash out</button>
+        <button type="submit" name="cashout" class="btn btn-primary cashout bottom-right">Cash out</button>
       </form>
     </main>
   

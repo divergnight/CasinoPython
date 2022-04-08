@@ -114,6 +114,14 @@ input{
   left: 5rem;
 }
 
+.cashout{
+  left: calc(50% - 200px);
+  font-size: 80px;
+  top: 50%;
+  width: 400px;
+  height: 130px;
+}
+
 .btn-primary:focus, .btn-primary:hover{
   border-color: #4E3B31;
   background-color: #4E3B31;
@@ -132,10 +140,28 @@ input{
 
 .earn{
   position: fixed;
-  top: 3rem;
+  top: 4rem;
   width: 100vw;
   text-align: center;
+  font-size: 30px;
 }
+
+.bet-sect{
+  position: fixed;
+  bottom: 5rem;
+  left: calc(50% - 125px);
+}
+
+.wallet{
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+}
+
+.wallet h4{
+  font-size: 40px !important;
+}
+
 
 
 /* Chrome, Safari, Edge, Opera */
