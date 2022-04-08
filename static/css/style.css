@@ -154,3 +154,29 @@ input[type=number] {
   color: var(--main-color) !important;
   font-weight: 750;
 }
+
+table{
+  position: fixed;
+  right: 2rem;
+  top: 4rem;
+  font-size: 22px;
+  border-collapse: separate;
+  border-spacing: 1rem 0;
+  border-bottom: 2px black solid;
+  border-radius: 5px;
+}
+
+th{
+  text-align: center;
+  font-size: 25px;
+}
+
+.ttop{
+  border-top: 2px black solid;
+  border-radius: 5px;
+  height: 10px;
+}
+
+td:last-child{
+  text-align: right;
+}

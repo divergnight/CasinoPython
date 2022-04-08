@@ -19,6 +19,105 @@
     <main role="main">
       <div class="wallet">
         <h4>Wallet : {{ session['wallet'] }}</h4>
+        
+        {% if 'bet' not in session %}
+          <table>
+            <thead>
+                <tr>
+                  <th colspan="2">Earnings</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Quinte Flush Royal</td>
+                <td>250</td>
+              </tr>
+              <tr>
+                <td>Quinte Flush</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>Carre</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <td>Full</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>Flush</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>Quinte</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Brelan</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Double Paire</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Paire</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        {% endif %}  
+          
+        {% if 'bet' in session %}
+          <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Earnings</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ttop" colspan="2"></td>
+              </tr>
+              <tr>
+                <td>Quinte Flush Royal</td>
+                <td>{{session['bet']*250}}</td>
+              </tr>
+              <tr>
+                <td>Quinte Flush</td>
+                <td>{{session['bet']*50}}</td>
+              </tr>
+              <tr>
+                <td>Carre</td>
+                <td>{{session['bet']*25}}</td>
+              </tr>
+              <tr>
+                <td>Full</td>
+                <td>{{session['bet']*9}}</td>
+              </tr>
+              <tr>
+                  <td>Flush</td>
+                  <td>{{session['bet']*6}}</td>
+              </tr>
+              <tr>
+                <td>Quinte</td>
+                <td>{{session['bet']*4}}</td>
+              </tr>
+              <tr>
+                <td>Brelan</td>
+                <td>{{session['bet']*3}}</td>
+              </tr>
+              <tr>
+                <td>Double Paire</td>
+                <td>{{session['bet']*2}}</td>
+              </tr>
+              <tr>
+                <td>Paire</td>
+                <td>{{session['bet']*1}}</td>
+              </tr>
+            </tbody>
+        </table>
+      {% endif %}
       </div>
       {% if 'bet' not in session %}
         <div class="cards">
