@@ -58,7 +58,7 @@ body{
 }
 
 .form-control{
-  color: whitesmoke;
+  color: rgb(217, 255, 0);
 }
 
 .btn-primary, .form-control{
@@ -67,7 +67,8 @@ body{
   background-image: url(../img/butonbg.jpg);
   background-color: #4E3B31;
   border-color: #4E3B31;
-  color: white !important;
+  color: rgb(217, 255, 0) !important;
+  font-weight: 750;
 }
 
 .btn-primary{
@@ -105,4 +106,9 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+::placeholder{
+  color: rgb(217, 255, 0) !important;
+  font-weight: 750;
 }

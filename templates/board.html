@@ -17,6 +17,9 @@
 
   <body>
     <main role="main">
+      <div class="wallet">
+        <h4>Wallet : {{ session['wallet'] }}</h4>
+      </div>
       {% if 'bet' not in session %}
         <div class="cards">
           {% for card in range(5) %}

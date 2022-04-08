@@ -13,6 +13,11 @@ vpoker_env = VideoPokerEnv()
 def index():
     return render_template('index.html')
 
+@app.route('/a')
+def indexa():
+    session.clear()
+    return redirect(url_for('index'))
+
 @app.route('/', methods=['POST'])
 def get_wallet():
     if 'age' in request.form:
