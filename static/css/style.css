@@ -155,7 +155,7 @@ input{
 .wallet{
   position: fixed;
   left: 1rem;
-  top: 1rem;
+  BOTTOM: 1rem;
 }
 
 .wallet h4{
@@ -214,4 +214,17 @@ td:last-child{
 
 .icon{
   width: 96px;
+}
+
+h1{
+  display: inline-block;
+  font-size: 48px;
+  margin-top: 18px;
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.title{
+    position: fixed;
+    padding: 5px;
 }
